@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 400 400"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Define gradient -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+    <style>
+      .title { font: bold 48px 'Helvetica Neue', sans-serif; fill: #FFFFFF; }
+      .tag   { font: 16px 'Helvetica Neue', sans-serif; fill: #FFFFFF; opacity: 0.8; }
+    </style>
+  </defs>
+
+  <!-- Background circle (optional) -->
+  <circle cx="200" cy="200" r="200" fill="#0A0F2B"/>
+
+  <!-- Left speech-bubble -->
+  <path
+    d="M130 180
+       a70 70 0 0 1 0 -140
+       a70 70 0 0 1 70 70
+       h-20
+       l-30 30
+       v40
+       z"
+    fill="url(#grad)"
+  />
+
+  <!-- Right speech-bubble -->
+  <path
+    d="M270 180
+       a70 70 0 0 0 0 -140
+       a70 70 0 0 0 -70 70
+       h20
+       l30 30
+       v40
+       z"
+    fill="url(#grad)"
+    opacity="0.9"
+  />
+
+  <!-- “Brain” dividing curve -->
+  <path
+    d="M200 40
+       c20 50 20 100 0 150"
+    stroke="#0A0F2B"
+    stroke-width="15"
+    fill="none"
+  />
+
+  <!-- Text “MINDSYNC” -->
+  <text x="200" y="300" text-anchor="middle" class="title">
+    MINDSYNC
+  </text>
+
+  <!-- Tagline -->
+  <text x="200" y="335" text-anchor="middle" class="tag">
+    COLLECTIVE CONSCIOUSNESS JOURNAL
+  </text>
+</svg>
