@@ -9,7 +9,6 @@ export default function AnalyticsPanel() {
   const [data, setData] = useState<MoodCount[]>([]);
 
   useEffect(() => {
-    let socket: ReturnType<typeof io>;
 
     const fetchData = () => {
       fetch('/api/analytics')
@@ -21,7 +20,7 @@ export default function AnalyticsPanel() {
     fetchData(); // initial load
 
     // subscribe to new-thought events to refresh analytics
-    socket = io();
+    const socket = io();
     socket.on('new-thought', () => {
       fetchData();
     });
