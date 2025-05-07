@@ -37,7 +37,7 @@ export default async function handler(
   // ————————————————————————————————————————————————
   if (req.method === 'POST') {
     try {
-      const { text, mood, deviceId } = req.body;
+      const { text, mood } = req.body;
       // TODO: one-thought-per-day enforcement via deviceId + date
 
       const thought = await Thought.create({ text, mood });

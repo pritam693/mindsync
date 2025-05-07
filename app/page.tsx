@@ -69,7 +69,7 @@ export default function Home() {
       >
         +
       </button>
-      {showModal && <SubmitModal onSubmit={handleSubmit} />}
+      {showModal && <SubmitModal onSubmit={handleSubmit} onCancel={() => setShowModal(false)} />}
     </div>
   );
 }

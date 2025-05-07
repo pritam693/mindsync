@@ -3,11 +3,14 @@
 import { useState } from 'react';
 import MoodSelector from './MoodSelector';
 
-interface Props { onSubmit: (text: string, mood: string) => void }
+interface Props {
+  onSubmit: (text: string, mood: string) => void;
+  onCancel: () => void;
+}
 
-export default function SubmitModal({ onSubmit }: Props) {
+export default function SubmitModal({ onSubmit, onCancel }: Props) {
   const [text, setText] = useState('');
-  const [mood, setMood] = useState('happy');
+  const [mood, setMood] = useState<'happy'|'sad'|'anxious'|'calm'|'angry'|'neutral'>('happy');
 
   return (
     <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm">
@@ -22,12 +25,20 @@ export default function SubmitModal({ onSubmit }: Props) {
           onChange={e => setText(e.target.value)}
         />
         <MoodSelector onChange={setMood} />
-        <button
-          onClick={() => onSubmit(text, mood)}
-          className="mt-4 px-4 py-2 bg-indigo-500 rounded-full"
-        >
-          Submit
-        </button>
+        <div className="mt-4 flex justify-end space-x-2">
+          <button
+            onClick={onCancel}
+            className="px-4 py-2 bg-gray-500 rounded-full hover:bg-gray-600 transition"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={() => onSubmit(text, mood)}
+            className="px-4 py-2 bg-indigo-500 rounded-full hover:bg-indigo-600 transition"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   );
